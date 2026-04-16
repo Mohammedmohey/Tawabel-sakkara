@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>توابل سقارة | دقة الكيمياء.. أصالة المذاق</title>
+  <meta name="description" content="توابل سقارة - متخصصون في إنتاج بصل وثوم بودرة جملة بجودة عالية لأصحاب المحلات والعطارة والمطاعم.">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso:  '#2D1B10',
+            wood:      '#4A2C1A',
+            amber:     '#C9952A',
+            gold:      '#E8B84B',
+            cream:     '#F5EDD6',
+            ivory:     '#FBF6EC',
+          },
+          fontFamily: {
+            display: ['Amiri', 'serif'],
+            body:    ['Tajawal', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* تحسين طريقة عرض النصوص في الهيرو */
+    .hero-title {
+        line-height: 1.1;
+        letter-spacing: -1px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-title span {
+        display: block; /* لضمان نزول الكلمة الثانية في سطر منفصل بدقة */
+        margin-top: 0.2rem;
+    }
+
+    .hero-subtitle {
+        max-width: 600px;
+        margin: 1.5rem auto 2.5rem;
+        line-height: 1.8;
+        opacity: 0.85;
+    }
+.btn-hero {
+        background-color: #4A2C1A; /* لون البني الغامق الأصلي للزرار */
+        color: #ffffff; /* لون النص أبيض صريح */
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid transparent;
+    }
+    
+    .btn-hero:hover {
+        background-color: #ffffff !important; /* بيفتح لدرجة الأبيض الصريح */
+        color: #4A2C1A !important; /* النص بيغمق للبني عشان التباين */
+        border-color: #4A2C1A; /* إضافة حدود بنية خفيفة */
+        transform: scale(1.0) translateY(-1px);
+        box-shadow: 0 15px 30px rgba(74, 44, 26, 0.3);
+    }
+    
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Tajawal', sans-serif; background: #ffffff; color: #1C0F07; margin: 0; overflow-x: hidden; }
+
+    .geo-bg {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23C9952A' stroke-width='0.4' opacity='0.1'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Hero Text Animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.6s ease forwards; opacity: 0; }
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.5s; }
+
+   /* ─── كارت المنتجات مع الحفاظ على ألوانك الأصلية ─── */
+   .product-card {
+      background: rgba(238, 209, 193, 0.25);
+      border: 1px solid rgba(238, 207, 145, 0.2);
+      /* سرعنا الحركة هنا لـ 0.2 ثانية */
+      transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1); 
+      position: relative;
+    }
+   .product-card:hover {
+      /* رفعنا الكارت أكتر شوية */
+      transform: translateY(-15px) scale(1.03); 
+      border-color: rgba(232, 184, 75, 0.9);
+      
+      /* إضاءة Glow أقوى بكتير وواضحة */
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 
+                  0 0 35px rgba(232, 184, 75, 0.5), /* هالة ذهبية قوية */
+                  0 0 10px rgba(232, 184, 75, 0.3);
+      
+      z-index: 10; /* عشان الإضاءة متجيش تحت الكروت اللي جنبه */
+    }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Glassmorphism Navigation */
+    .nav-scrolled { 
+      background: rgba(251, 246, 236, 0.9) !important; 
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+    }
+
+    .ar-num { font-variant-numeric: proportional-nums; }
+  </style>
+</head>
+
+<body class="geo-bg">
+
+  <nav id="navbar" class="fixed top-0 right-0 left-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#hero" class="flex flex-col">
+        <span class="font-display text-wood text-2xl font-bold">توابل سقارة</span>
+        <span class="text-amber text-[10px] tracking-widest font-bold">TAWABEL SAKKARA</span>
+      </a>
+      
+      <ul class="hidden md:flex items-center gap-2 text-sm font-bold text-wood">
+        <li><a href="#products" class="px-4 py-2 hover:bg-amber/10 rounded-full transition-all">منتجاتنا</a></li>
+        <li><a href="#features" class="px-4 py-2 hover:bg-amber/10 rounded-full transition-all">لماذا نحن</a></li>
+        <li><a href="#contact" class="bg-wood text-cream px-6 py-2 rounded-full shadow-md hover:bg-amber transition-all ml-4">اطلب الآن</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0">
+    <img 
+      src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1600&q=80" 
+      class="w-full h-full object-cover opacity-60" 
+      alt="توابل سقارة"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-ivory via-ivory/40 to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 text-center max-w-5xl mx-auto px-6 pt-32 pb-20">
+
+    <div class="fade-up delay-1 flex items-center justify-center gap-3 mb-8">
+      <span class="w-12 h-px bg-amber/60"></span>
+      <span class="text-amber text-[10px] md:text-xs tracking-[5px] uppercase font-bold">منذ الجيل الأول</span>
+      <span class="w-12 h-px bg-amber/60"></span>
+    </div>
+
+    <h1 class="fade-up delay-2 font-display text-wood hero-title cursor-default"
+        style="font-size: clamp(3rem, 8vw, 6.5rem);">
+      دقة الكيمياء.. 
+      <span class="highlight-text block mt-2">أصالة المذاق</span>
+    </h1>
+
+    <div class="fade-up delay-4 flex justify-center mt-10">
+      <a href="#products"
+         class="btn-hero bg-wood text-white font-body font-bold px-10 py-4 rounded-full shadow-xl">
+        اكتشف منتجاتنا
+      </a>
+    </div>
+  </div>
+</section>
+
+  <section id="products" class="py-24 bg-ivory/50 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="reveal text-center mb-16">
+        <h2 class="font-display text-5xl text-wood mb-4">مجموعتنا المختارة</h2>
+        <div class="w-24 h-1 bg-amber mx-auto opacity-30"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="#contact" class="reveal product-card rounded-3xl p-6 group">
+          <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=600&q=80" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <h3 class="font-display text-wood text-2xl mb-3">ثوم بودرة</h3>
+          <p class="text-wood/60 text-sm mb-6 leading-relaxed">تجفيف معملي يحافظ على كامل الزيوت العطرية والنكهة النفاذة.</p>
+          <div class="flex gap-2">
+            <span class="bg-ivory text-wood text-[10px] px-3 py-1 rounded-full ar-num">واحد كيلو</span>
+            <span class="bg-ivory text-wood text-[10px] px-3 py-1 rounded-full ar-num">٥ كيلو</span>
+          </div>
+        </a>
+
+        <a href="#contact" class="reveal product-card rounded-3xl p-6 group scale-105 border-amber/20">
+          <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1620574387735-3624d75b2dbc?w=600&q=80" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <h3 class="font-display text-wood text-2xl mb-3">بصل بودرة</h3>
+          <p class="text-wood/60 text-sm mb-6 leading-relaxed">نقاء ١٠٠٪ بدون أي إضافات، يذوب في تتبيلاتك ليعطي المذاق المثالي.</p>
+          <div class="flex gap-2">
+            <span class="bg-ivory text-wood text-[10px] px-3 py-1 rounded-full ar-num">واحد كيلو</span>
+            <span class="bg-ivory text-wood text-[10px] px-3 py-1 rounded-full ar-num">٥ كيلو</span>
+          </div>
+        </a>
+
+        <a href="#contact" class="reveal product-card rounded-3xl p-6 group">
+          <div class="overflow-hidden rounded-2xl mb-6 shadow-sm">
+            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=600&q=80" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <h3 class="font-display text-wood text-2xl mb-3">توابل الدخان</h3>
+          <p class="text-wood/60 text-sm mb-6 leading-relaxed">نكهة الشواء الطبيعية في عبوة واحدة، خلطة سقارة السرية.</p>
+          <div class="flex gap-2">
+            <span class="bg-ivory text-wood text-[10px] px-3 py-1 rounded-full ar-num">٥ كيلو</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
+      <div class="reveal">
+        <div class="w-16 h-16 bg-ivory rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">🧪</div>
+        <h4 class="font-display text-xl text-wood mb-2 font-bold">دقة معملية</h4>
+        <p class="text-wood/60 text-sm">بإشراف كيميائي لضمان أعلى معايير الجودة.</p>
+      </div>
+      <div class="reveal">
+        <div class="w-16 h-16 bg-ivory rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">🌿</div>
+        <h4 class="font-display text-xl text-wood mb-2 font-bold">نقاء طبيعي</h4>
+        <p class="text-wood/60 text-sm">خالٍ تماماً من المواد الحافظة والإضافات.</p>
+      </div>
+      <div class="reveal">
+        <div class="w-16 h-16 bg-ivory rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">🚛</div>
+        <h4 class="font-display text-xl text-wood mb-2 font-bold">شحن سريع</h4>
+        <p class="text-wood/60 text-sm">نصلك أينما كنت في أسرع وقت ممكن.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 bg-ivory/30">
+    
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-white rounded-[2rem] shadow-xl p-8 md:p-16 reveal text-center border border-amber/10">
+        <h2 class="font-display text-5xl text-wood mb-6 font-bold">اطلب الآن</h2>
+        <p class="text-wood/50 mb-12 text-lg">يسعدنا تواصلكم للطلبات الفردية أو الجملة</p>
+        
+        
+        <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+          <div class="text-wood font-medium flex items-center gap-4 whitespace-nowrap min-w-max">
+    <div class="w-12 h-12 flex items-center justify-center bg-ivory rounded-full shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-wood" viewBox="0 0 640 512">
+            <path d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h46.7L512 209.3V256H416V160zM160 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm320-32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/>
+        </svg>
+    </div>
+    <div class="text-right">
+        <p class="opacity-40 text-[10px] mb-1">الموقع</p>
+        <p class="text-lg">مصر - التوصيل متاح</p>
+    </div>
+</div>
+         <a
+  href="https://wa.me/201124221166"
+  target="_blank"
+  class="wa-btn inline-flex items-center gap-4 bg-[#25D366] hover:bg-[#20bc5a] text-white font-body font-bold px-10 py-5 rounded-2xl transition-all duration-300 text-base shadow-lg"
+>
+  <div class="flex flex-col items-start leading-tight text-right">
+    <span class="text-[10px] opacity-90 font-normal">تواصل مباشر عبر</span>
+    <span class="text-xl ar-num tracking-wider">01124221166</span>
+  </div>
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-white" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+          <div class="text-wood font-medium">
+            <p class="opacity-40 text-xs mb-1">البريد الإلكتروني</p>
+            <p class="text-lg">mohammedmohey2006@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <footer class="py-12 bg-white text-wood/30 text-center text-sm border-t border-ivory">
+    <p>© <span class="ar-num">٢٠٢٦</span> توابل سقارة. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('nav-scrolled', window.scrollY > 40);
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
